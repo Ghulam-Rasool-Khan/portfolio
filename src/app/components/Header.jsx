@@ -54,7 +54,7 @@ function Header() {
           whileInView={{ y:0, opacity: 1}}
           transition={{duration:0.6, delay:1.2}}
           
-          href="/sample-resume.pdf" download className="border border-gray-500 px-10 py-3 flex items-center gap-2 rounded-full bg-white dark:text-black">My resume
+          href="/my-resume2.pdf" download className="border border-gray-500 px-10 py-3 flex items-center gap-2 rounded-full bg-white dark:text-black">My resume
           <Image src={assets.download_icon} alt="" className="w-4"/>
         </motion.a>
       </div>

@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { assets, infoList, toolsData } from "../../../assets/assets";
-import {motion} from 'motion/react'
+import { motion } from 'motion/react'
+import projectsData from "../../../assets/projectsData";
+
 
 function About({isDarkMode}) {
   return (
@@ -94,6 +96,48 @@ function About({isDarkMode}) {
             </motion.li>
             ))}
           </motion.ul>
+
+          {/* ================================ */}
+
+
+          <motion.h4
+  initial={{ y: 20, opacity: 0 }}
+  whileInView={{ y: 0, opacity: 1 }}
+  transition={{ delay: 1.7, duration: 0.5 }}
+  className="my-6 text-gray-700 font-Ovo dark:text-white/80"
+>
+  My Live Projects
+</motion.h4>
+
+<motion.div
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  transition={{ delay: 1.9, duration: 0.6 }}
+  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4"
+>
+  {projectsData.map((project, index) => (
+    <motion.div
+      key={index}
+      whileHover={{ scale: 1.03 }}
+       className="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50 relative"
+    >
+      <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-white">{project.title}</h3>
+      <p className="text-sm text-gray-600 dark:text-white/80 mb-4">{project.description}</p>
+      <a
+        href={project.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-blue-600 dark:text-blue-400 underline text-[14px] absolute bottom-1 "
+      >
+        Visit Project →
+      </a>
+    </motion.div>
+  ))}
+</motion.div>
+
+
+
+          {/* ================================= */}
 
         </motion.div>
       </motion.div>
